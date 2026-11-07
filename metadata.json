@@ -1,0 +1,6 @@
+{
+  "name": "ZHONGLU AUTO",
+  "description": "Premium automotive and commercial vehicle trading platform — Driving Global Connections.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
