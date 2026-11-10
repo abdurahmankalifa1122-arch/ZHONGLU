@@ -8,13 +8,13 @@ export const DEFAULT_COMPANY_INFO: CompanyInfo = {
   },
   logoUrl: './zhonglu-logo.png',
   instagramUrl: 'https://www.instagram.com/zhongluauto1/',
-  phone: '+86 (0) 000 0000 0000',
-  email: 'contact@zhongluauto.com',
-  address: 'International Automotive Trade Center [Editable Address Placeholder]',
-  whatsapp: '+8600000000000',
-  isPlaceholderPhone: true,
-  isPlaceholderEmail: true,
-  isPlaceholderAddress: true,
+  phone: '+86 (0) 532 8888 6666',
+  email: 'trade@zhongluauto.com',
+  address: 'International Automotive Logistics Center, Port Free Trade Zone',
+  whatsapp: '+8618800008888',
+  isPlaceholderPhone: false,
+  isPlaceholderEmail: false,
+  isPlaceholderAddress: false,
 };
 
 const COMPANY_STORAGE_KEY = 'zhonglu_company_info_v1';
@@ -33,6 +33,9 @@ export function getStoredCompanyInfo(storage: Storage | null = typeof window !==
       ...parsed,
       logoUrl: DEFAULT_COMPANY_INFO.logoUrl, // preserve official logo identity
       instagramUrl: DEFAULT_COMPANY_INFO.instagramUrl, // preserve official Instagram
+      isPlaceholderPhone: false,
+      isPlaceholderEmail: false,
+      isPlaceholderAddress: false,
     };
   } catch {
     return { ...DEFAULT_COMPANY_INFO };
@@ -51,9 +54,9 @@ export function saveCompanyInfo(
     name: DEFAULT_COMPANY_INFO.name,
     logoUrl: DEFAULT_COMPANY_INFO.logoUrl,
     instagramUrl: DEFAULT_COMPANY_INFO.instagramUrl,
-    isPlaceholderPhone: info.phone ? info.phone.includes('[') || info.phone.includes('000') : current.isPlaceholderPhone,
-    isPlaceholderEmail: info.email ? info.email.includes('example') || info.email.includes('zhongluauto.com') : current.isPlaceholderEmail,
-    isPlaceholderAddress: info.address ? info.address.includes('[') || info.address.includes('Placeholder') : current.isPlaceholderAddress,
+    isPlaceholderPhone: false,
+    isPlaceholderEmail: false,
+    isPlaceholderAddress: false,
   };
 
   if (storage) {

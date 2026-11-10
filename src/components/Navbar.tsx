@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useCompany } from '../context/CompanyContext';
-import { Menu, X, Globe, Settings, ArrowRight, Phone, MessageSquare } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const { lang, setLang, t } = useLanguage();
-  const { companyInfo, setIsEditModalOpen } = useCompany();
+  const { companyInfo } = useCompany();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -80,7 +80,7 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* Header Controls: Language Switcher, Edit Placeholders, CTA */}
+          {/* Header Controls: Language Switcher & Request Quote CTA */}
           <div className="hidden sm:flex items-center gap-3 xl:gap-4 shrink-0">
             {/* Language Switcher */}
             <div className="flex items-center bg-slate-900/90 border border-slate-700/80 rounded-lg p-0.5 text-xs font-semibold shadow-inner">
@@ -110,17 +110,6 @@ export const Navbar: React.FC = () => {
                 中文
               </button>
             </div>
-
-            {/* Quick Edit Placeholders Trigger */}
-            <button
-              type="button"
-              onClick={() => setIsEditModalOpen(true)}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 rounded-lg transition-colors"
-              title={t.nav.editDetails}
-            >
-              <Settings className="w-3.5 h-3.5 text-slate-400" />
-              <span>{t.nav.editDetails}</span>
-            </button>
 
             {/* Request Quote Primary Action */}
             <a
@@ -184,19 +173,7 @@ export const Navbar: React.FC = () => {
               </a>
             ))}
 
-            <div className="pt-3 flex flex-col gap-2.5">
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  setIsEditModalOpen(true);
-                }}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-slate-300 bg-slate-900 border border-slate-700 rounded-lg"
-              >
-                <Settings className="w-4 h-4 text-slate-400" />
-                <span>{t.nav.editDetails}</span>
-              </button>
-
+            <div className="pt-3">
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}

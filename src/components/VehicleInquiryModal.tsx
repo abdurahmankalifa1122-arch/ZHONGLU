@@ -129,8 +129,8 @@ export const VehicleInquiryModal: React.FC = () => {
                     </span>
                   </div>
                 </div>
-                <span className="text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
-                  {t.vehicles.sampleTag}
+                <span className="text-[10px] font-mono font-medium text-slate-300 bg-slate-900 px-2.5 py-1 rounded border border-slate-700">
+                  {selectedVehicleForInquiry.specs.drive[lang]}
                 </span>
               </div>
 

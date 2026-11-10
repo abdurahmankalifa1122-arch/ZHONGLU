@@ -13,15 +13,12 @@ import {
   MessageCircle,
   CheckCircle,
   AlertCircle,
-  Edit2,
   ExternalLink,
-  Building,
-  Globe,
 } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
   const { t, lang } = useLanguage();
-  const { companyInfo, setIsEditModalOpen } = useCompany();
+  const { companyInfo } = useCompany();
 
   const [formData, setFormData] = useState<Partial<InquiryFormData>>({
     fullName: '',
@@ -300,26 +297,16 @@ export const ContactSection: React.FC = () => {
             )}
           </div>
 
-          {/* Right: Direct Channels & Editable Coordinates (5 Cols) */}
+          {/* Right: Direct Channels & Corporate Coordinates (5 Cols) */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
             <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-7 sm:p-8 shadow-xl">
-              <div className="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
-                <div>
-                  <h3 className="text-xl font-bold text-white">
-                    {t.contact.companyDirectTitle}
-                  </h3>
-                  <p className="text-xs text-slate-400 mt-1">
-                    {t.contact.companyDirectSub}
-                  </p>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => setIsEditModalOpen(true)}
-                  className="p-2 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-lg border border-slate-700 transition-colors"
-                  title={t.contact.editDetailsBtn}
-                >
-                  <Edit2 className="w-4 h-4 text-red-400" />
-                </button>
+              <div className="pb-4 border-b border-slate-800 mb-6">
+                <h3 className="text-xl font-bold text-white">
+                  {t.contact.companyDirectTitle}
+                </h3>
+                <p className="text-xs text-slate-400 mt-1">
+                  {t.contact.companyDirectSub}
+                </p>
               </div>
 
               {/* Direct Info Items */}
@@ -375,83 +362,50 @@ export const ContactSection: React.FC = () => {
                   </div>
                 </a>
 
-                {/* Editable Phone */}
+                {/* Phone */}
                 <div className="flex items-start gap-4 p-4 rounded-xl bg-slate-950/80 border border-slate-800">
                   <div className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-slate-400 font-medium">
-                        {lang === 'zh' ? '电话号码' : 'Phone Contact'}
-                      </span>
-                      {companyInfo.isPlaceholderPhone && (
-                        <span className="text-[10px] font-mono text-amber-400/90 bg-amber-500/10 px-1.5 py-0.5 rounded">
-                          {t.contact.phonePlaceholderNote}
-                        </span>
-                      )}
-                    </div>
+                    <span className="text-xs text-slate-400 font-medium block">
+                      {lang === 'zh' ? '电话号码' : 'Phone Contact'}
+                    </span>
                     <p className="text-sm font-semibold text-white mt-1 font-mono">
                       {companyInfo.phone}
                     </p>
                   </div>
                 </div>
 
-                {/* Editable Email */}
+                {/* Email */}
                 <div className="flex items-start gap-4 p-4 rounded-xl bg-slate-950/80 border border-slate-800">
                   <div className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-slate-400 font-medium">
-                        {lang === 'zh' ? '电子邮箱' : 'Email Address'}
-                      </span>
-                      {companyInfo.isPlaceholderEmail && (
-                        <span className="text-[10px] font-mono text-amber-400/90 bg-amber-500/10 px-1.5 py-0.5 rounded">
-                          {t.contact.emailPlaceholderNote}
-                        </span>
-                      )}
-                    </div>
+                    <span className="text-xs text-slate-400 font-medium block">
+                      {lang === 'zh' ? '电子邮箱' : 'Email Address'}
+                    </span>
                     <p className="text-sm font-semibold text-white mt-1 break-all">
                       {companyInfo.email}
                     </p>
                   </div>
                 </div>
 
-                {/* Editable Address */}
+                {/* Address */}
                 <div className="flex items-start gap-4 p-4 rounded-xl bg-slate-950/80 border border-slate-800">
                   <div className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-slate-400 font-medium">
-                        {lang === 'zh' ? '商业地址' : 'Business Address'}
-                      </span>
-                      {companyInfo.isPlaceholderAddress && (
-                        <span className="text-[10px] font-mono text-amber-400/90 bg-amber-500/10 px-1.5 py-0.5 rounded">
-                          {t.contact.addressPlaceholderNote}
-                        </span>
-                      )}
-                    </div>
+                    <span className="text-xs text-slate-400 font-medium block">
+                      {lang === 'zh' ? '商业地址' : 'Business Address'}
+                    </span>
                     <p className="text-sm text-slate-200 mt-1 leading-relaxed">
                       {companyInfo.address}
                     </p>
                   </div>
                 </div>
-              </div>
-
-              {/* Edit Details Prompt Button */}
-              <div className="mt-6 pt-5 border-t border-slate-800">
-                <button
-                  type="button"
-                  onClick={() => setIsEditModalOpen(true)}
-                  className="w-full py-2 px-4 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-300 hover:text-white transition-colors flex items-center justify-center gap-2"
-                >
-                  <Edit2 className="w-3.5 h-3.5 text-amber-400" />
-                  <span>{t.contact.editDetailsBtn}</span>
-                </button>
               </div>
             </div>
           </div>

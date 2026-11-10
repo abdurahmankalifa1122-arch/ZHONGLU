@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { BUSINESS_CATEGORIES } from '../data/business';
-import { ArrowRight, CheckCircle2, Sliders, ExternalLink } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export const BusinessSection: React.FC = () => {
   const { t, lang } = useLanguage();
@@ -10,29 +10,18 @@ export const BusinessSection: React.FC = () => {
     <section id="business" className="py-24 bg-slate-950 border-t border-slate-800 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div className="max-w-2xl">
-            <div className="flex items-center gap-2 text-xs font-bold tracking-widest text-red-500 uppercase mb-3">
-              <span>{t.business.kicker}</span>
-              <span aria-hidden="true">·</span>
-              <span className="text-slate-400">{lang === 'zh' ? '中鲁汽车' : 'ZHONGLU AUTO'}</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
-              {t.business.title}
-            </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-              {t.business.subtitle}
-            </p>
+        <div className="max-w-3xl mb-16">
+          <div className="flex items-center gap-2 text-xs font-bold tracking-widest text-red-500 uppercase mb-3">
+            <span>{t.business.kicker}</span>
+            <span aria-hidden="true">·</span>
+            <span className="text-slate-400">{lang === 'zh' ? '中鲁汽车' : 'ZHONGLU AUTO'}</span>
           </div>
-
-          <div className="flex items-center gap-2 text-xs text-slate-400 bg-slate-900 border border-slate-800 px-3.5 py-2 rounded-lg self-start md:self-auto">
-            <Sliders className="w-4 h-4 text-amber-400" />
-            <span>
-              {lang === 'zh'
-                ? '提示：业务板块标识为可编辑示例，支持定制拓展'
-                : 'Notice: Categories labeled as configurable sample sectors'}
-            </span>
-          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+            {t.business.title}
+          </h2>
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            {t.business.subtitle}
+          </p>
         </div>
 
         {/* 4 Business Category Cards Grid */}
@@ -52,10 +41,10 @@ export const BusinessSection: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent" />
 
-                {/* Explicit Editable Tag */}
+                {/* Clean Category Subtitle Tag */}
                 <div className="absolute top-4 left-4 z-10">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono font-medium bg-slate-950/80 text-amber-400 border border-amber-500/30 backdrop-blur-md">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-medium bg-slate-950/85 text-slate-200 border border-slate-700/80 backdrop-blur-md">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
                     {category.subtitle[lang]}
                   </span>
                 </div>

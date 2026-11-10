@@ -1,11 +1,9 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { useCompany } from '../context/CompanyContext';
-import { Building2, Compass, Award, Users, Edit3, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { Building2, Compass, Award, Users } from 'lucide-react';
 
 export const AboutSection: React.FC = () => {
   const { t, lang } = useLanguage();
-  const { companyInfo, setIsEditModalOpen } = useCompany();
 
   return (
     <section id="about" className="py-24 bg-slate-900 border-t border-slate-800 relative">
@@ -23,26 +21,6 @@ export const AboutSection: React.FC = () => {
           <div className="space-y-4 text-base sm:text-lg text-slate-300 leading-relaxed">
             <p>{t.about.p1}</p>
             <p>{t.about.p2}</p>
-          </div>
-
-          {/* Clearly marked editable placeholder banner */}
-          <div className="mt-6 p-4 rounded-xl bg-slate-950/70 border border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="flex items-start gap-3">
-              <span className="text-xs px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 font-mono mt-0.5">
-                {lang === 'zh' ? '可配置' : 'Configurable'}
-              </span>
-              <p className="text-xs text-slate-400 leading-normal">
-                {t.about.placeholderNotice}
-              </p>
-            </div>
-            <button
-              type="button"
-              onClick={() => setIsEditModalOpen(true)}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-200 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-lg border border-slate-700 transition-colors shrink-0"
-            >
-              <Edit3 className="w-3.5 h-3.5 text-red-400" />
-              <span>{t.nav.editDetails}</span>
-            </button>
           </div>
         </div>
 

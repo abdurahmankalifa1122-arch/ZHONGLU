@@ -62,7 +62,7 @@ export const VEHICLES: Vehicle[] = [
         '加强型双摆重型鞍座总成',
       ],
     },
-    isSample: true,
+    isSample: false,
   },
   {
     id: 'zl-d460',
@@ -125,7 +125,7 @@ export const VEHICLES: Vehicle[] = [
         '金属防撞杠与全封闭大灯防护格栅',
       ],
     },
-    isSample: true,
+    isSample: false,
   },
   {
     id: 'zl-c380',
@@ -188,7 +188,7 @@ export const VEHICLES: Vehicle[] = [
         '支持厢式货厢、侧帘厢及冷藏保温厢定制',
       ],
     },
-    isSample: true,
+    isSample: false,
   },
   {
     id: 'zl-s560',
@@ -251,7 +251,7 @@ export const VEHICLES: Vehicle[] = [
         '前后标配重型拖钩与气电连接控制面板',
       ],
     },
-    isSample: true,
+    isSample: false,
   },
   {
     id: 'zl-e420',
@@ -314,7 +314,7 @@ export const VEHICLES: Vehicle[] = [
         '电池液冷温控系统，支持全天候高负荷运行',
       ],
     },
-    isSample: true,
+    isSample: false,
   },
   {
     id: 'zl-v260',
@@ -377,6 +377,6 @@ export const VEHICLES: Vehicle[] = [
         '支持加装各类液压垂直尾板及专用装载设备',
       ],
     },
-    isSample: true,
+    isSample: false,
   },
 ];

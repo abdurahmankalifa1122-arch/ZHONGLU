@@ -6,7 +6,7 @@ import { Instagram, Mail, Phone, MapPin, ExternalLink, Globe, ArrowUp } from 'lu
 
 export const Footer: React.FC = () => {
   const { t, lang, setLang } = useLanguage();
-  const { companyInfo, setIsEditModalOpen } = useCompany();
+  const { companyInfo } = useCompany();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -107,11 +107,8 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-xs">
               {BUSINESS_CATEGORIES.map((cat) => (
                 <li key={cat.id}>
-                  <a href="#business" className="hover:text-red-400 transition-colors flex items-center justify-between">
-                    <span>{cat.title[lang]}</span>
-                    <span className="text-[10px] text-slate-600 font-mono">
-                      {lang === 'zh' ? '可定制' : 'Configurable'}
-                    </span>
+                  <a href="#business" className="hover:text-red-400 transition-colors">
+                    {cat.title[lang]}
                   </a>
                 </li>
               ))}
@@ -120,18 +117,9 @@ export const Footer: React.FC = () => {
 
           {/* Contact Coordinates (3 Cols) */}
           <div className="lg:col-span-3 space-y-4">
-            <div className="flex items-center justify-between">
-              <h4 className="text-xs font-bold text-white uppercase tracking-wider font-mono">
-                {t.contact.companyDirectTitle}
-              </h4>
-              <button
-                type="button"
-                onClick={() => setIsEditModalOpen(true)}
-                className="text-[11px] text-amber-400 hover:text-amber-300 underline font-mono"
-              >
-                {t.nav.editDetails}
-              </button>
-            </div>
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider font-mono">
+              {t.contact.companyDirectTitle}
+            </h4>
 
             <div className="space-y-2.5 text-xs">
               <div className="flex items-start gap-2.5">

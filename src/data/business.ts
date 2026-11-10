@@ -8,8 +8,8 @@ export const BUSINESS_CATEGORIES: BusinessCategory[] = [
       zh: '商用车辆',
     },
     subtitle: {
-      en: 'Fleet Logistics & Transport [Editable Category]',
-      zh: '车队物流与干线客货运输 [可编辑业务]',
+      en: 'Fleet Logistics & Transport',
+      zh: '车队物流与干线客货运输',
     },
     description: {
       en: 'Comprehensive commercial transport solutions encompassing distribution trucks, urban delivery units, and high-capacity cargo carriers designed for reliability and uptime.',
@@ -30,7 +30,7 @@ export const BUSINESS_CATEGORIES: BusinessCategory[] = [
         '全生命周期技术资料指导与关键配件支持',
       ],
     },
-    isEditable: true,
+    isEditable: false,
   },
   {
     id: 'trucks',
@@ -39,8 +39,8 @@ export const BUSINESS_CATEGORIES: BusinessCategory[] = [
       zh: '重卡车辆',
     },
     subtitle: {
-      en: 'Tractors & Tippers [Editable Category]',
-      zh: '重型牵引车与工程自卸车 [可编辑业务]',
+      en: 'Tractors & Tippers',
+      zh: '重型牵引车与工程自卸车',
     },
     description: {
       en: 'Heavy-duty commercial prime movers and construction dump trucks built for demanding highways, mining terrains, and major civil infrastructure developments.',
@@ -61,7 +61,7 @@ export const BUSINESS_CATEGORIES: BusinessCategory[] = [
         '集成液力缓速器及舒适长途双卧宽体驾驶室',
       ],
     },
-    isEditable: true,
+    isEditable: false,
   },
   {
     id: 'automotive-solutions',
@@ -70,8 +70,8 @@ export const BUSINESS_CATEGORIES: BusinessCategory[] = [
       zh: '汽车解决方案',
     },
     subtitle: {
-      en: 'Specification & Sourcing [Editable Category]',
-      zh: '技术参数匹配与定制采购 [可编辑业务]',
+      en: 'Specification & Sourcing',
+      zh: '技术参数匹配与定制采购',
     },
     description: {
       en: 'Targeted vehicle consultation matching engine horsepower, chassis dimensions, axle configurations, and emission classes with destination country regulations and road conditions.',
@@ -92,7 +92,7 @@ export const BUSINESS_CATEGORIES: BusinessCategory[] = [
         '海外保养周期规范建议及技术维修指引',
       ],
     },
-    isEditable: true,
+    isEditable: false,
   },
   {
     id: 'vehicle-trading',
@@ -101,8 +101,8 @@ export const BUSINESS_CATEGORIES: BusinessCategory[] = [
       zh: '车辆贸易',
     },
     subtitle: {
-      en: 'Cross-Border Supply Chain [Editable Category]',
-      zh: '跨国供应链与外贸出口 [可编辑业务]',
+      en: 'Cross-Border Supply Chain',
+      zh: '跨国供应链与外贸出口',
     },
     description: {
       en: 'Streamlined export management connecting vehicle buyers with verified manufacturing hubs through clear contract terms, rigorous pre-shipment inspections, and international shipping.',
@@ -123,7 +123,7 @@ export const BUSINESS_CATEGORIES: BusinessCategory[] = [
         '支持灵活的外贸交货条款（FOB、CFR、CIF等）',
       ],
     },
-    isEditable: true,
+    isEditable: false,
   },
 ];
 

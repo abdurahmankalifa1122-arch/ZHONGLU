@@ -37,10 +37,10 @@ export const EditCompanyModal: React.FC = () => {
   const handleReset = () => {
     resetCompanyInfo();
     setFormValues({
-      phone: '+86 (0) 000 0000 0000',
-      email: 'contact@zhongluauto.com',
-      address: 'International Automotive Trade Center [Editable Address Placeholder]',
-      whatsapp: '+8600000000000',
+      phone: '+86 (0) 532 8888 6666',
+      email: 'trade@zhongluauto.com',
+      address: 'International Automotive Logistics Center, Port Free Trade Zone',
+      whatsapp: '+8618800008888',
     });
     setSavedBanner(true);
     setTimeout(() => {
@@ -99,7 +99,7 @@ export const EditCompanyModal: React.FC = () => {
               name="phone"
               value={formValues.phone}
               onChange={handleChange}
-              placeholder="+86 (0) 000 0000 0000"
+              placeholder="+86 (0) 532 8888 6666"
               className="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white placeholder-slate-600 focus:outline-none focus:border-red-500 font-mono"
             />
           </div>
@@ -144,7 +144,7 @@ export const EditCompanyModal: React.FC = () => {
               rows={2}
               value={formValues.address}
               onChange={handleChange}
-              placeholder="International Automotive Trade Center [Editable Address Placeholder]"
+              placeholder="International Automotive Logistics Center, Port Free Trade Zone"
               className="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white placeholder-slate-600 focus:outline-none focus:border-red-500"
             />
           </div>

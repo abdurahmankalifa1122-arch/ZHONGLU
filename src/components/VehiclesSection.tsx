@@ -3,7 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { useCompany } from '../context/CompanyContext';
 import { VEHICLES } from '../data/vehicles';
 import { Vehicle } from '../types';
-import { MessageSquare, Gauge, Cog, Zap, Weight, Shield, Info, ArrowRight } from 'lucide-react';
+import { MessageSquare, ArrowRight } from 'lucide-react';
 
 export const VehiclesSection: React.FC = () => {
   const { t, lang } = useLanguage();
@@ -37,18 +37,12 @@ export const VehiclesSection: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
             {t.vehicles.title}
           </h2>
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-6">
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
             {t.vehicles.subtitle}
           </p>
-
-          {/* Sample inventory notice */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-950/80 border border-slate-800 text-xs text-slate-400 font-mono">
-            <Info className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-            <span>{t.vehicles.sampleNotice}</span>
-          </div>
         </div>
 
-        {/* Category Filter Tabs (Zero-Pill: Clean segmented buttons with active states) */}
+        {/* Category Filter Tabs */}
         <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 scrollbar-none" role="tablist">
           {filterTabs.map((tab) => {
             const isActive = selectedFilter === tab.id;
@@ -87,14 +81,6 @@ export const VehiclesSection: React.FC = () => {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
-
-                {/* Sample Specification Watermark Tag */}
-                <div className="absolute top-4 left-4 z-10">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-950/85 text-[11px] font-mono text-amber-400 border border-amber-500/30 backdrop-blur-md">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-                    {t.vehicles.sampleTag}
-                  </span>
-                </div>
 
                 {/* Drive Type Badge */}
                 <div className="absolute top-4 right-4 z-10">
